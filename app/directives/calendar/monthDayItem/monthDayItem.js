@@ -19,10 +19,10 @@
           console.log('onDayClick', scope, scope.date.toDate());
         };
 
-        /*scope.getEvents = function () {
-          console.log('get events');
+        scope.getEvents = function () {
+          console.log('get events', scope.data);
           return scope.data.find(item => item.date === moment(scope.date).format('YYYY-MM-DD'));
-        };*/
+        };
 
       }
     }

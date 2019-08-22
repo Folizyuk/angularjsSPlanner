@@ -23,6 +23,10 @@
       return self.data.filter(item => moment(item.date).isBetween(fromDate, toDate));
     };
 
+    self.getAllData = function() {
+      return self.data;
+    };
+
     self.addEvent = function ({ date, name, isAllDay, start, end }) {
       const existDate = self.data.find(item => item.date === moment(date).format('YYYY-MM-DD'));
       const event = { name, isAllDay, start, end };
@@ -37,7 +41,9 @@
     };
 
     return {
-      getData: self.getData
+      getData: self.getData,
+      getAllData: self.getAllData,
+      addEvent: self.addEvent
     }
   }
 })();
