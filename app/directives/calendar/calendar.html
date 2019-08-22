@@ -1,0 +1,19 @@
+<div ng-controller="CalendarCtrl" class="calendar-container">
+  <div class="calendar-controls">
+    <button ng-click="prev(-1)">prev</button>
+    <div>{{ startFrom.toDate() | date: 'MMMM yyyy' }}</div>
+    <button ng-click="next(1)">next</button>
+  </div>
+  <div class="calendar-header">
+    <div ng-repeat="date in dates[0]">
+      {{ date.toDate() | date: 'EEEE' }}
+    </div>
+  </div>
+  <div ng-repeat="dateArr in dates" class="calendar-row">
+    <div ng-repeat="date in dateArr"
+         class="calendar-row-item"
+         ng-class="{ 'not-current-month-day': date.month() !== startFrom.month() }">
+      {{ date | dayOfAnotherMonth: startFrom }}
+    </div>
+  </div>
+</div>

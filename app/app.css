@@ -1,25 +1,47 @@
-/* app css stylesheet */
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+.calendar-container {
+  margin: 0 30px;
 }
 
-.menu:before {
-  content: "[";
+.calendar-controls {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
 }
 
-.menu:after {
-  content: "]";
+.calendar-controls div {
+  width: 150px;
+  text-align: center;
 }
 
-.menu > li {
-  display: inline;
+.calendar-header {
+  display: flex;
+  padding: 30px 10px 10px;
+  background-color: #dddddd;
+  border-bottom: 1px solid #bababa;
+  color: grey;
 }
 
-.menu > li + li:before {
-  content: "|";
-  padding-right: 0.3em;
+.calendar-header div {
+  flex: 1;
+}
+
+.calendar-row {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+.calendar-row-item {
+  flex: 1;
+  height: 60px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.calendar-row-item:hover {
+  outline: 1px solid #ccc;
+}
+
+.calendar-row-item.not-current-month-day {
+  background-color: rgb(250, 249, 248);
 }

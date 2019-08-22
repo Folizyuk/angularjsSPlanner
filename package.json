@@ -9,7 +9,8 @@
     "angular": "^1.7.5",
     "angular-loader": "^1.7.5",
     "angular-route": "^1.7.5",
-    "html5-boilerplate": "0.0.1"
+    "html5-boilerplate": "0.0.1",
+    "moment": "^2.24.0"
   },
   "devDependencies": {
     "angular-mocks": "^1.7.5",
@@ -26,7 +27,7 @@
     "postinstall": "npm run copy-libs",
     "update-deps": "npm update",
     "postupdate-deps": "npm run copy-libs",
-    "copy-libs": "cpx \"node_modules/{angular,angular-*,html5-boilerplate/dist}/**/*\" app/lib -C",
+    "copy-libs": "cpx \"node_modules/{angular,angular-*,html5-boilerplate/dist,moment}/**/*\" app/lib -C",
     "prestart": "npm install",
     "start": "http-server -a localhost -p 8000 -c-1 ./app",
     "pretest": "npm install",
@@ -36,6 +37,6 @@
     "//": "Do not install the Firefox driver to work around https://github.com/angular/webdriver-manager/issues/303.",
     "update-webdriver": "webdriver-manager update --gecko false",
     "preprotractor": "npm run update-webdriver",
-    "protractor": "protractor e2e-tests/protractor.conf.js",
+    "protractor": "protractor e2e-tests/protractor.conf.js"
   }
 }
