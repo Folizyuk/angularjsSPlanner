@@ -9,8 +9,6 @@
     $scope.dates = [];
     $scope.startFrom = moment();
 
-    console.log('ctrl scope', $scope);
-
     self.init = function() {
       const start = moment($scope.startFrom).date(1).day(days[self.startDayOfWeek]);
       const end = moment($scope.startFrom).endOf('month').day(self.startDayOfWeek ? 7 : 6);
