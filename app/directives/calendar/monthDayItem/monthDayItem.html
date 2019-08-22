@@ -1,0 +1,6 @@
+<div class="calendar-row-item"
+     ng-click="onDayClick()"
+     ng-class="{ 'not-current-month-day': date.month() !== startFrom.month() }">
+  {{ date | dayOfAnotherMonth: startFrom }}
+  <div ng-if="eventData" class="event-point"></div>
+</div>

@@ -2,11 +2,12 @@
   angular.module('myApp')
     .controller('CalendarCtrl', CalendarCtrl);
 
-  function CalendarCtrl($scope) {
+  function CalendarCtrl($scope, calendarService) {
     let self = this;
     let days = { 0: 'Sunday', 1: 'Monday'};
     self.startDayOfWeek = 0;
     $scope.dates = [];
+    $scope.data = [];
     $scope.startFrom = moment();
 
     self.init = function() {
@@ -24,6 +25,9 @@
       while (dates.length) {
         $scope.dates.push(dates.splice(0, 7));
       }
+
+      $scope.data = calendarService.getData(start, end);
+      console.log('calendarService', $scope.data);
     };
 
     self.go = function (count) {

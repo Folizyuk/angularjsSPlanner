@@ -10,10 +10,11 @@
     </div>
   </div>
   <div ng-repeat="dateArr in dates" class="calendar-row">
-    <div ng-repeat="date in dateArr"
-         class="calendar-row-item"
-         ng-class="{ 'not-current-month-day': date.month() !== startFrom.month() }">
-      {{ date | dayOfAnotherMonth: startFrom }}
-    </div>
+    <month-day-item
+        ng-repeat="date in dateArr"
+        date="date"
+        data="data"
+        start-from="startFrom">
+    </month-day-item>
   </div>
 </div>
