@@ -1,7 +1,7 @@
-<div ng-controller="CalendarCtrl">
+<div ng-controller="CalendarCtrl" class="calendar-container">
   <div class="calendar-controls">
     <button ng-click="prev(-1)">prev</button>
-    <span>{{ month + ' ' + year }}</span>
+    <div>{{ (startFrom.toDate() | date: 'MMMM') + ' ' + (startFrom.toDate() | date: 'yyyy') }}</div>
     <button ng-click="next(1)">next</button>
   </div>
   <div class="calendar-header">

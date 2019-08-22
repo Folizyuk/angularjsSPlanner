@@ -1,11 +1,23 @@
+.calendar-container {
+  margin: 0 30px;
+}
+
 .calendar-controls {
   display: flex;
   justify-content: center;
   margin: 10px 0;
 }
 
+.calendar-controls div {
+  width: 150px;
+  text-align: center;
+}
+
 .calendar-header {
   display: flex;
+  padding: 30px 0 10px;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #bababa;
 }
 
 .calendar-header div {

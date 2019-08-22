@@ -7,14 +7,13 @@
     let days = { 0: 'Sunday', 1: 'Monday'};
     self.startDayOfWeek = 0;
     $scope.dates = [];
-    $scope.month = moment().format('MMMM');
-    $scope.year = +moment().format('YYYY');
+    $scope.startFrom = moment();
 
     console.log('ctrl scope', $scope);
 
     self.init = function() {
-      const start = moment().month($scope.month).date(1).day(days[self.startDayOfWeek]);
-      const end = moment().month($scope.month).endOf('month').day(7 - (self.startDayOfWeek || 1));
+      const start = moment($scope.startFrom).date(1).day(days[self.startDayOfWeek]);
+      const end = moment($scope.startFrom).endOf('month').day(7 - (self.startDayOfWeek || 1));
       let curr = moment(start);
       const dates = [];
 
@@ -30,8 +29,7 @@
     };
 
     self.go = function (count) {
-      $scope.month = moment().month($scope.month).add(count, "months").format('MMMM');
-      $scope.year = moment().month($scope.month).format('YYYY');
+      $scope.startFrom = moment($scope.startFrom).add(count, "months");
       self.init();
     };
 
