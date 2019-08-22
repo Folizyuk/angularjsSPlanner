@@ -13,7 +13,7 @@
 
     self.init = function() {
       const start = moment($scope.startFrom).date(1).day(days[self.startDayOfWeek]);
-      const end = moment($scope.startFrom).endOf('month').day(7 - (self.startDayOfWeek || 1));
+      const end = moment($scope.startFrom).endOf('month').day(self.startDayOfWeek ? 7 : 6);
       let curr = moment(start);
       const dates = [];
 

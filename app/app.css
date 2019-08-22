@@ -15,9 +15,10 @@
 
 .calendar-header {
   display: flex;
-  padding: 30px 0 10px;
-  background-color: #f4f4f4;
+  padding: 30px 10px 10px;
+  background-color: #dddddd;
   border-bottom: 1px solid #bababa;
+  color: grey;
 }
 
 .calendar-header div {
@@ -32,5 +33,15 @@
 .calendar-row-item {
   flex: 1;
   height: 60px;
-  padding-top: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.calendar-row-item:hover {
+  outline: 1px solid #ccc;
+}
+
+.calendar-row-item.not-current-month-day {
+  background-color: rgb(250, 249, 248);
 }
