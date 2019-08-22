@@ -4,7 +4,14 @@
     <span>{{ month }}</span>
     <button ng-click="next(1)">next</button>
   </div>
-  <div ng-repeat="date in dates track by $index">
-    {{ date }}
+  <div class="calendar-header">
+    <div ng-repeat="date in dates[0]">
+      {{ date.toDate() | date: 'EEE' }}
+    </div>
+  </div>
+  <div ng-repeat="dateArr in dates" class="calendar-row">
+    <div ng-repeat="date in dateArr" class="calendar-row-item">
+      {{ date.toDate() | date: 'd' }}
+    </div>
   </div>
 </div>

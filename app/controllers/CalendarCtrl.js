@@ -14,11 +14,16 @@
       const start = moment().month($scope.month).date(1);
       const end = moment().month($scope.month).endOf('month');
       let curr = moment(start);
-      $scope.dates = [];
+      const dates = [];
 
       while (curr.isSameOrBefore(end)) {
-        $scope.dates.push(moment(curr));
+        dates.push(moment(curr));
         curr.add(1, 'days');
+      }
+
+      $scope.dates = [];
+      while (dates.length) {
+        $scope.dates.push(dates.splice(0, 7));
       }
     };
 

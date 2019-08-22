@@ -1,25 +1,18 @@
-/* app css stylesheet */
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+.calendar-header {
+  display: flex;
 }
 
-.menu:before {
-  content: "[";
+.calendar-header div {
+  flex: 1;
 }
 
-.menu:after {
-  content: "]";
+.calendar-row {
+  display: flex;
+  border-bottom: 1px solid #ccc;
 }
 
-.menu > li {
-  display: inline;
-}
-
-.menu > li + li:before {
-  content: "|";
-  padding-right: 0.3em;
+.calendar-row-item {
+  flex: 1;
+  height: 60px;
+  padding-top: 10px;
 }
